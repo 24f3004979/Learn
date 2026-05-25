@@ -1,0 +1,4 @@
+TODO
+1. Make well documented and explored stuff with this repo
+2. making small experiments to explore the topic of interest is required
+3. Make well researched and documented repository about the interesting topics

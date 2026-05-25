@@ -9,17 +9,3 @@ If you are trying to solve a specific problem, these resources can help you expl
 
 • Optimization: Learn more about evolutionary metaheuristics through the ScienceDirect Tree-Seed Optimization Study. 
 • AI & Chemistry: Read about generating semantic triples in the  National Center for Biotechnology Information (NCBI) Multistep Retrosynthesis Study 
-. 
-
-Let me know which of these aligns with what you are looking for so we can dive into the exact equations, code, or data you need! 
-
-AI responses may include mistakes.
-
-[1] https://www.instagram.com/p/DWRChZIDycJ/
-[2] https://www.sciencedirect.com/science/article/abs/pii/S0952197621001512
-[3] https://pmc.ncbi.nlm.nih.gov/articles/PMC10510629/
-[4] https://link.springer.com/article/10.1007/s00778-025-00945-5
-[5] https://pmc.ncbi.nlm.nih.gov/articles/PMC11474389/
-[6] https://docs.remyx.ai/tutorials/knowledge-graph-triplets
-
-DJB2 Algorithm stuff working :)
