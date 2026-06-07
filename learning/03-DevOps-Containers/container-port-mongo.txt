@@ -1,0 +1,12 @@
+What are containers
+How a server works like in the case of mongodb ? 
+
+what is the sense of using podman and what it provides ? 
+
+what is port forwardingto the host machine to the container and what it really mean deep down which ports
+	What are ports how ports are defined ? 
+	Who controlls the port
+why website runs into a port and listens to the port ? 
+What is really port frowarding and how its able to give hackers acces how firewall protects it ? 
+
+What to do with container and how they are made out and work within my operating system ? 
