@@ -1,4 +1,8 @@
-TODO
+ToDO
 1. Make well documented and explored stuff with this repo
 2. making small experiments to explore the topic of interest is required
-3. Make well researched and documented repository about the interesting topics
+3.Make well researched and documented repository about the interesting topics
+
+Statistical Study is required for the vizion core data exploration module
+Implemented structure for learning & Documentation
++ Making Statistic topic study of around 5 pages and implementing with simple experiment
