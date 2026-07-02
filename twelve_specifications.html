@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twelve Human Specifications</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+  :root{
+    --parchment: #FDFAF2;
+    --parchment-deep: #F6EFDC;
+    --ink: #2B2118;
+    --maroon: #8C3A2E;
+    --maroon-deep: #6E2C22;
+    --saffron: #C8842A;
+    --saffron-light: #E0A94F;
+    --teal: #2E4A47;
+    --gold-line: rgba(140,58,46,0.28);
+    --shadow: rgba(120,95,60,0.18);
+    --bg-top: #F3ECDA;
+    --bg-bottom: #E9DFC6;
+  }
+
+  *{ box-sizing:border-box; }
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse at top, var(--bg-top) 0%, var(--bg-bottom) 60%, #E3D7B9 100%);
+    color: var(--ink);
+    font-family: 'EB Garamond', serif;
+    padding: 0 0 100px 0;
+  }
+
+  .wrap{ max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  /* HERO */
+  header.hero{
+    text-align:center;
+    padding: 90px 24px 70px;
+    color: var(--ink);
+    position: relative;
+  }
+  header.hero .eyebrow{
+    font-family:'Cinzel', serif;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    color: var(--maroon);
+    margin-bottom: 22px;
+  }
+  header.hero h1{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    margin: 0 0 18px;
+    line-height:1.15;
+    letter-spacing: 0.01em;
+    color: var(--maroon-deep);
+  }
+  header.hero .om{
+    font-size: 2.4rem;
+    color: var(--saffron);
+    margin-bottom: 18px;
+    display:block;
+  }
+  header.hero p.sub{
+    font-family:'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: #5a4a36;
+    max-width: 620px;
+    margin: 0 auto;
+    line-height:1.6;
+  }
+  header.hero .instructions{
+    margin-top: 34px;
+    font-family:'EB Garamond', serif;
+    font-size: 0.95rem;
+    color: var(--maroon);
+    letter-spacing: 0.03em;
+  }
+
+  /* CARD LIST */
+  .cards{ display:flex; flex-direction:column; gap: 26px; margin-top: 20px; }
+
+  .card{
+    background: linear-gradient(180deg, var(--parchment) 0%, var(--parchment-deep) 100%);
+    border-radius: 6px;
+    box-shadow: 0 10px 30px var(--shadow), 0 1px 0 rgba(255,255,255,0.3) inset;
+    border: 1px solid rgba(122,43,38,0.15);
+    overflow: hidden;
+    position: relative;
+  }
+  .card::before{
+    content:"";
+    position:absolute; top:0; left:0; right:0; height: 4px;
+    background: linear-gradient(90deg, var(--maroon), var(--saffron), var(--maroon));
+  }
+
+  .card-body{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0;
+  }
+  .col{
+    padding: 26px 22px;
+    border-right: 1px dashed var(--gold-line);
+  }
+  .col:last-child{ border-right:none; }
+  .col .label{
+    font-family:'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--maroon);
+    margin-bottom: 10px;
+    opacity: 0.75;
+  }
+  .col .text{
+    font-family:'Cormorant Garamond', serif;
+    font-size: 1.08rem;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .col.central .text{
+    font-weight:600;
+    color: var(--teal);
+  }
+
+  /* REVEAL SEAL BUTTON */
+  .seal-row{
+    background: var(--maroon-deep);
+    padding: 16px 22px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    cursor:pointer;
+    user-select:none;
+    transition: background 0.25s ease;
+  }
+  .seal-row:hover{ background: var(--maroon); }
+  .seal-row:focus-visible{ outline: 3px solid var(--saffron-light); outline-offset:-3px; }
+
+  .seal-left{ display:flex; align-items:center; gap:14px; }
+  .seal-num{
+    width: 34px; height:34px; border-radius:50%;
+    background: radial-gradient(circle at 35% 30%, var(--saffron-light), var(--saffron) 60%, #a9691c 100%);
+    color: var(--maroon-deep);
+    font-family:'Cinzel', serif; font-weight:700; font-size:0.95rem;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    flex-shrink:0;
+  }
+  .seal-prompt{
+    font-family:'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--parchment);
+    opacity: 0.85;
+  }
+  .chevron{
+    color: var(--saffron-light);
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+  }
+  .card.open .chevron{ transform: rotate(180deg); }
+
+  .reveal{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s ease;
+    background: linear-gradient(180deg, #fff8e8, var(--parchment));
+  }
+  .card.open .reveal{ max-height: 200px; }
+  .reveal-inner{
+    padding: 22px 26px 26px;
+    border-top: 1px solid var(--gold-line);
+    display:flex;
+    align-items:baseline;
+    gap: 14px;
+  }
+  .reveal-inner .spec-index{
+    font-family:'Cinzel', serif;
+    font-size: 0.85rem;
+    color: var(--saffron);
+    flex-shrink:0;
+  }
+  .reveal-inner .spec-text{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 1.5rem;
+    color: var(--maroon-deep);
+    line-height:1.35;
+  }
+
+  /* SUMMARY SCROLL */
+  .summary{
+    margin-top: 90px;
+    background: linear-gradient(180deg, var(--parchment) 0%, var(--parchment-deep) 100%);
+    border-radius: 6px;
+    box-shadow: 0 14px 40px var(--shadow);
+    padding: 50px 46px 46px;
+    position: relative;
+    border: 1px solid rgba(122,43,38,0.15);
+  }
+  .summary::before{
+    content:"";
+    position:absolute; top:0; left:0; right:0; height: 4px;
+    background: linear-gradient(90deg, var(--saffron), var(--maroon), var(--saffron));
+  }
+  .summary .eyebrow{
+    font-family:'Cinzel', serif;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-size: 0.68rem;
+    color: var(--maroon);
+    text-align:center;
+    margin-bottom: 12px;
+    opacity: 0.8;
+  }
+  .summary h2{
+    font-family:'Cinzel', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    text-align:center;
+    color: var(--maroon-deep);
+    margin: 0 0 40px;
+  }
+  .summary-list{
+    list-style: none;
+    margin:0; padding:0;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 40px;
+  }
+  .summary-list li{
+    display:flex;
+    gap: 14px;
+    align-items:flex-start;
+    font-family:'Cormorant Garamond', serif;
+    font-size: 1.12rem;
+    line-height:1.5;
+    color: var(--ink);
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--gold-line);
+  }
+  .summary-list .n{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color: var(--saffron);
+    font-size: 1rem;
+    flex-shrink:0;
+    width: 22px;
+  }
+  .summary-footer{
+    margin-top: 40px;
+    text-align:center;
+    font-family:'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--teal);
+    font-size: 1.1rem;
+    max-width: 620px;
+    margin-left:auto; margin-right:auto;
+  }
+
+  @media (max-width: 860px){
+    .card-body{ grid-template-columns: 1fr 1fr; }
+    .col{ border-bottom: 1px dashed var(--gold-line); }
+    .col:nth-child(2n){ border-right:none; }
+    .summary-list{ grid-template-columns: 1fr; }
+    .summary{ padding: 36px 22px; }
+  }
+  @media (max-width: 540px){
+    .card-body{ grid-template-columns: 1fr; }
+    .col{ border-right:none; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .chevron{ transition: none; }
+  }
+
+  .signature{
+    text-align: right;
+    margin-top: 28px;
+    padding-right: 4px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--maroon);
+    opacity: 0.85;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="om">&#3346;</span>
+  <div class="eyebrow">A Reading Across Three Scriptures</div>
+  <h1>Twelve Human Specifications</h1>
+  <p class="sub">A well-known contemplative list, set beside the Bhagavad G&#299;t&#257;, the Upani&#7779;ads, and the Yoga V&#257;si&#7779;&#7789;ha &mdash; three voices describing the same terms of the soul's incarnation.</p>
+  <div class="instructions">&#9670; click the seal on each card to reveal its specification &#9670;</div>
+</header>
+
+<div class="wrap">
+  <div class="cards" id="cards"></div>
+
+  <section class="summary">
+    <div class="eyebrow">In Full</div>
+    <h2>The Twelve Specifications, Gathered</h2>
+    <ol class="summary-list" id="summaryList"></ol>
+    <p class="summary-footer">Read together, the twelve describe a single teaching: the body is temporary, every experience instructs, nothing is wasted, unlearned patterns return, growth has no final stop, presence outranks place, others mirror the self, the mind authors both bondage and freedom, and the answer &mdash; forgotten, then remembered &mdash; was always within.</p>
+  </section>
+
+  <div class="signature">&mdash; Prakash Hegade</div>
+</div>
+
+<script>
+const data = [
+  {
+    spec: "You will receive a body.",
+    gita: "\u201cJust as a person discards worn-out garments and puts on new ones, so the Self discards worn-out bodies and takes on new ones.\u201d \u2014 2.22",
+    upanishad: "The Self is unborn and eternal, while bodies perish. \u2014 Katha Upani\u1e63ad 2.18",
+    vasistha: "The body is a temporary vehicle; consciousness alone is real.",
+    idea: "The body is an instrument, not the Self."
+  },
+  {
+    spec: "You will learn lessons.",
+    gita: "Learn through humility, inquiry, and service to the wise. \u2014 4.34",
+    upanishad: "Seek a teacher who knows Brahman. \u2014 Mu\u1e47\u1e0daka Upani\u1e63ad 1.2.12",
+    vasistha: "Every experience is an opportunity for awakening.",
+    idea: "Life itself is the teacher."
+  },
+  {
+    spec: "There are no mistakes, only lessons.",
+    gita: "\u201cNo effort on this path is ever lost.\u201d \u2014 6.40",
+    upanishad: "Ignorance, not sin, is described as the cause of suffering.",
+    vasistha: "Every apparent failure contributes to wisdom when understood.",
+    idea: "Experience becomes knowledge."
+  },
+  {
+    spec: "A lesson will be repeated until it is learned.",
+    gita: "8.6 and 8.16 discuss repeated birth according to one's consciousness and karma.",
+    upanishad: "Speaks of repeated cycles due to ignorance. \u2014 Katha Upani\u1e63ad",
+    vasistha: "Unresolved desires recreate similar experiences until understanding dawns.",
+    idea: "Karma repeats patterns until wisdom arises."
+  },
+  {
+    spec: "Learning lessons does not end.",
+    gita: "The Lord continually grants deeper understanding to sincere seekers. \u2014 10.10",
+    upanishad: "Encourages lifelong inquiry into the Self. \u2014 B\u1e5bhad\u0101ra\u1e47yaka Upani\u1e63ad",
+    vasistha: "Wisdom unfolds endlessly as the mind becomes purified.",
+    idea: "Spiritual growth is continuous."
+  },
+  {
+    spec: "'There' is no better than 'Here'.",
+    gita: "The yogi sees the Divine equally everywhere. \u2014 6.29",
+    upanishad: "Everything is pervaded by the Divine. \u2014 Isha Upani\u1e63ad 1",
+    vasistha: "Peace is found in the present mind, not another place.",
+    idea: "Fulfillment is inward, not geographical."
+  },
+  {
+    spec: "Others are merely mirrors of you.",
+    gita: "One sees others as oneself. \u2014 6.32",
+    upanishad: "\u201cTat Tvam Asi\u201d \u2014 That Thou Art. \u2014 Ch\u0101ndogya Upani\u1e63ad",
+    vasistha: "The world reflects the condition of one's own mind.",
+    idea: "The external reflects the internal."
+  },
+  {
+    spec: "What you make of your life is up to you.",
+    gita: "\u201cLift yourself by yourself; do not degrade yourself.\u201d \u2014 6.5",
+    upanishad: "The wise choose the good over the merely pleasant. \u2014 Katha Upani\u1e63ad",
+    vasistha: "The mind alone creates bondage and liberation.",
+    idea: "Responsibility lies within."
+  },
+  {
+    spec: "Life is exactly what you think it is.",
+    gita: "A person is made of his faith and deepest convictions. \u2014 17.3",
+    upanishad: "\u201cMind alone is the cause of bondage and liberation.\u201d \u2014 Am\u1e5btabindu Upani\u1e63ad",
+    vasistha: "The universe appears according to the state of the mind.",
+    idea: "Perception shapes experience."
+  },
+  {
+    spec: "Your answers lie inside you.",
+    gita: "\u201cI dwell in the heart of all beings.\u201d \u2014 10.20",
+    upanishad: "\u201cTat Tvam Asi.\u201d \u2014 Ch\u0101ndogya Upani\u1e63ad 6.8.7",
+    vasistha: "Self-knowledge alone resolves all questions.",
+    idea: "Truth is discovered within."
+  },
+  {
+    spec: "You will forget all of this.",
+    gita: "\u201cFrom Me come memory, knowledge, and forgetfulness.\u201d \u2014 15.15",
+    upanishad: "The Self is forgotten because of ignorance (avidy\u0101).",
+    vasistha: "Consciousness veils itself through identification with the mind.",
+    idea: "Spiritual ignorance obscures truth."
+  },
+  {
+    spec: "You can remember it whenever you want.",
+    gita: "Arjuna regains his memory and clarity. \u2014 18.73",
+    upanishad: "Self-realization removes ignorance. \u2014 B\u1e5bhad\u0101ra\u1e47yaka Upani\u1e63ad",
+    vasistha: "Liberation is recognition of what has always been true.",
+    idea: "Awakening is remembrance, not acquisition."
+  }
+];
+
+const cardsEl = document.getElementById('cards');
+const summaryEl = document.getElementById('summaryList');
+
+data.forEach((row, i) => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <div class="card-body">
+      <div class="col">
+        <div class="label">Bhagavad G\u012bt\u0101</div>
+        <div class="text">${row.gita}</div>
+      </div>
+      <div class="col">
+        <div class="label">Upani\u1e63ads</div>
+        <div class="text">${row.upanishad}</div>
+      </div>
+      <div class="col">
+        <div class="label">Yoga V\u0101si\u1e63\u1e6dha</div>
+        <div class="text">${row.vasistha}</div>
+      </div>
+      <div class="col central">
+        <div class="label">Central Idea</div>
+        <div class="text">${row.idea}</div>
+      </div>
+    </div>
+    <div class="seal-row" role="button" tabindex="0" aria-expanded="false">
+      <div class="seal-left">
+        <div class="seal-num">${i + 1}</div>
+        <div class="seal-prompt">Reveal the specification</div>
+      </div>
+      <div class="chevron">&#9660;</div>
+    </div>
+    <div class="reveal">
+      <div class="reveal-inner">
+        <div class="spec-index">${i + 1}.</div>
+        <div class="spec-text">${row.spec}</div>
+      </div>
+    </div>
+  `;
+  cardsEl.appendChild(card);
+
+  const sealRow = card.querySelector('.seal-row');
+  const toggle = () => {
+    const isOpen = card.classList.toggle('open');
+    sealRow.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    sealRow.querySelector('.seal-prompt').textContent = isOpen ? 'Conceal the specification' : 'Reveal the specification';
+  };
+  sealRow.addEventListener('click', toggle);
+  sealRow.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+  });
+
+  const li = document.createElement('li');
+  li.innerHTML = `<span class="n">${i + 1}.</span><span>${row.spec}</span>`;
+  summaryEl.appendChild(li);
+});
+</script>
+
+</body>
+</html>
