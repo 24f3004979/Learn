@@ -16,4 +16,6 @@ because addiction stops us from geting into deep thing, books takes us to real h
 Flow needs environment which makes you to go into the flwo and keep you going into achieving the ultimate step :)
 
 When  in study desk nothing else should be their, 
-  make spaces for certain things don't mispopulate the spaces
+  make spaces for certain things don't mispopulate the spaces.
+
+Only the one who shows up every single day wins the race, e must should be consistent with our efforts
