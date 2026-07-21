@@ -1,8 +1,0 @@
-# how to make file
-Learn about C Programming and How to make structure and make
-
-What is struct what is type def and more about in fundamental programming language and stuff
-
-I lack too much fundamental stuff read books and learn more about the c programming , memory allocations and points here and their
-
-> Have to Make organised working books shelfing way out for the reading habit to learn more
