@@ -1,11 +1,11 @@
 Machine Learning
     |- supervised
         |- With lables about dataset
-    |- un-supervised
+    |- UN-supervised
         |- Without lables | to find lables
 
-# Un-Supervised
-- Without Lables
+# UN-Supervised
+- Without Labels
 - Finding patterns into dataset
     |- Clustering
     Making simple clusters of related dataset together
