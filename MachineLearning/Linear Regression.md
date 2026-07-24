@@ -16,6 +16,12 @@ Why do we have used psudo inverse into finding the Least square, I have previous
 How we decide shape of  our target dataset, how we would take features and units ? 
 In what basis would be assign things to take all features at once, or take features unit wise ?
 
+## All Feature at once or with steps ?
+**Taking all features at once gives the global situation with variability based on features structure at higher dimension, features if being independent then both ways would give same result**
+
+Features loading at once is a choice of computational resources , but i am not able to find the exact difference with taking step by step, 
+Since with matrix operations to understand things we take whole features set at once , and into optimized way we take with steps to understand the dataset.
+
 Solution with respect to data points given in dataset, x vector comprises of all features packed unit, Its squared matrix might not be inverting due to which we took pseudo inverse and computed the final weights required for best fit for training dataset
 
 Q : How does really this formula works into finding the best fit ?
