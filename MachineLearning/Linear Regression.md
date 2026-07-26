@@ -49,3 +49,6 @@ Final Expectation result
 $$
 E = [|{\hat W} - W|] => \sigma^2.tracce((XX^T)^+)
 $$
+
+## Probabilistic Skills are lacking for madhav to ace the exam as per the requirements set bby himself
+Please study statistics in a good way and understand the underlying things about statistical models their modeling for the situations and get through those concepts correctly
