@@ -25,7 +25,7 @@ Since with matrix operations to understand things we take whole features set at 
 Solution with respect to data points given in dataset, x vector comprises of all features packed unit, Its squared matrix might not be inverting due to which we took pseudo inverse and computed the final weights required for best fit for training dataset
 
 Q : How does really this formula works into finding the best fit ?
-Q : What is really the formula finding ? :)
+	Q : What is really the formula finding ? :)  | Finding the weight for the model
 
 $$
 w^*=(xx^T)^+xy
