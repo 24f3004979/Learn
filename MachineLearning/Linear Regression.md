@@ -16,6 +16,7 @@ Why do we have used psudo inverse into finding the Least square, I have previous
 How we decide shape of  our target dataset, how we would take features and units ? 
 In what basis would be assign things to take all features at once, or take features unit wise ?
 
+It is the route we take, either with matrix way or with algebraic way.
 ## All Feature at once or with steps ?
 **Taking all features at once gives the global situation with variability based on features structure at higher dimension, features if being independent then both ways would give same result**
 
@@ -30,9 +31,25 @@ Q : How does really this formula works into finding the best fit ?
 $$
 w^*=(xx^T)^+xy
 $$
+
+**Formula Explanation**
+-> With x.x^T being the component which is squared length of all data vector which is being pseudo inverse only taking those data point who could be inverted for the inverse computation,  Dropping all of the elements which cant be inversed.
+
+With numerator being xy is the how much x is aligned with y divided with the length of the vectors, 
+	For Each vectors of dataset, its ( length_square of data point / how much x is related to y)
+	
+
+
 With respect to features vectors, Taking account of all features from the dataset, we can make a subspace where we can project the target vector to get the final solution,
 
 Q: What we can interpret with projecting target vector into the subspace spanned by the feature vectors ? , How it is useful into regression problem ?
+
+Finding the nearest point the feature space about target vector, since we have to find weights which best explains the target vector with feature vectors right ?
+So we would find those exact weights for this work..
+
+Since feature vector , target vector being into the same space, the weight would also be a big vector then how it could be used into making predictions ?
+
+Feature vector spanning space is simply forming all features made vector space, where features can expand for explaining the vector, making target vector projection to the given space
 
 
 ## Goodness of MLE for Linear Regression

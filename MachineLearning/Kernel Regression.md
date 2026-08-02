@@ -2,6 +2,14 @@ Map the regular linear regression expression to form a kernel to generalize for 
 
 [task] : Make the Regression formula which is generalized for non-linear spaces for doing regression
 
+With Kernel Regression, we project data points into infinite space, and get the exact relation of the points, 
+
+We can control kernel regression with using ridge regression setup to prevent over-fit of the dataset, 
+Kernel could also be used for the control of the ridge regression, 
+$$
+K(x,y) = exp(-||x-z||^2)/2 \sigma^2
+$$
+
 # Probabilistic View
 Q How to do the Maximum likelihood thing for given dataset or even formulate , Model the problem to solve ?
 
