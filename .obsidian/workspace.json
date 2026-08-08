@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MachineLearning/MLT sesson output.md",
+                "file": "2026-07-28.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MLT sesson output"
+              "title": "2026-07-28"
             }
           }
         ]
@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -183,8 +185,9 @@
   "active": "194402ccc4b14578",
   "lastOpenFiles": [
     "Pasted image 20260729201529.png",
-    "2026-07-28.md",
     "MachineLearning/MLT sesson output.md",
+    "2026-08-05.md",
+    "2026-07-28.md",
     "AppDevelopment/Initiating VUE.md",
     "Untitled.canvas",
     "AppDevelopment/Untitled.md",
