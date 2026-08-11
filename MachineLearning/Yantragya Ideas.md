@@ -1,1 +1,0 @@
- we can also make simple c++ extension to existing python moduels in solving the matrix or compute heavy tasks and call the precompiled c++ code to execute those steps speeding python capabilities and working as a wrapper to serve the c++ core at making those ML library :)
