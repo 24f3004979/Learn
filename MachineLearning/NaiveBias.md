@@ -32,4 +32,13 @@ $$
 p(y^{test}=1 | x^{test}) = \frac{p(x^{test} | y^{test}=1).p(y^{test}=1)}{p(x^{test})}
 $$
 
+Probability expression for a given testing words sequence belonging to a class
+$$
+p(y^{test}=0|x=[f1,f2,...f_d]) = \prod_i^d (p_i^{f_i})(1-p_i^1)^{1-f_i}
+$$
+Explaination for the right side expression
+Its computing probability of words sequence as per the training set with either there occurence or absense
+
+## Problems with this approach
+Handleing new words | with zero probability due to our rule
 
