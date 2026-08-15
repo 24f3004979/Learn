@@ -25,8 +25,11 @@ features would be from our words set, they all are given probability
 **Bayse Rule Approach for finding probability**
 Finding probability of given test label of a specific class
 Equals
-> probability of geting such feature combination ~ multiplying all probability of given feature sets
-    geting such features given target class chained probability 
+probability of geting such feature combination ~ multiplying all probability of given feature sets
+geting such features given target class chained probabilityt 
+
 $$
 p(y^{test}=1 | x^{test}) = \frac{p(x^{test} | y^{test}=1).p(y^{test}=1)}{p(x^{test})}
 $$
+
+
