@@ -39,6 +39,15 @@ $$
 Explaination for the right side expression
 Its computing probability of words sequence as per the training set with either there occurence or absense
 
+
 ## Problems with this approach
 Handleing new words | with zero probability due to our rule
+Thus presense of one single word which was not part of dictionary would make whoole expression equal to zero
 
+Laplaze smoothing : To eliminate the zero problem into naive bais aproach
+$$
+P(x_i | y) = \frac{count(x_i, c)+1}{count(x) + V}
+$$
+
+$V$ Means number of unique words in given set
+$1$ is used for simply taking numeritor being one not zero
