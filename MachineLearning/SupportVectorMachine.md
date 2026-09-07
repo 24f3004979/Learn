@@ -64,15 +64,11 @@ Final Modiefied Formulation for the Soft Margin SVM
 
 Minimize $w$ along with $\xi_i$ with Hyper parameter $C$
 $$
-
 \frac{1}{2} ||w||^2 + C \sum_{i=1}^n \xi_i
-
 $$
 
 with modified expression of bribe based soft margin
 
 $$
-
 (w^Tx_i)y_i + \xi_i >= 1
-
 $$
