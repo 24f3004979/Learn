@@ -13,7 +13,7 @@ works with given constraints to the dataset
 $gama$ is the margin separation for the dataset
 
 $$
-mistakes = \frac{R^2}{\gama}
+mistakes = \frac{R^2}{\gamma}
 $$
 
 ## Problems
