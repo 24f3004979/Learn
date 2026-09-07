@@ -41,3 +41,38 @@ $$
 --- 
 
 ## Real World contains problems a lot of them 🐈‍⬛
+
+1. Soft Margin approachh
+
+Making every w feasible :) with bribe paying points which gets miss classified
+Formula modification , 
+
+editing same condition with svm with one margin containing one bribe variable
+One more varible to minimize which is e {bribe condition to minimize}
+we want to minimize the bribe payment for the given condition
+
+*Problem with this formulation*
+We allow all weights with the help of bribe condition to be a valid weight element
+along with allowing big set of weights to join the group
+
+Make panalty for paying bribe minimization expression gets addition with sum of all bribes to be minimized with length of weight
+> with panalty with bribes now we would head towards good direction with balancing factor C <-- Hyper parameter
+
+Final Modiefied Formulation for the Soft Margin SVM
+
+**CONDITION 1**
+
+Minimize $w$ along with $\xi_i$ with Hyper parameter $C$
+$$
+
+\frac{1}{2} ||w||^2 + C \sum_{i=1}^n \xi_i
+
+$$
+
+with modified expression of bribe based soft margin
+
+$$
+
+(w^Tx_i)y_i + \xi_i >= 1
+
+$$
