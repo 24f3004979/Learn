@@ -63,6 +63,8 @@ Final Modiefied Formulation for the Soft Margin SVM
 **CONDITION 1**
 
 Minimize $w$ along with $\xi_i$ with Hyper parameter $C$
+
+
 $$
 \frac{1}{2} ||w||^2 + C \sum_{i=1}^n \xi_i
 $$
